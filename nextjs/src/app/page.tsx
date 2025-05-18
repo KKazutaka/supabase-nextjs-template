@@ -71,23 +71,13 @@ export default function Home() {
                 <Link href="#pricing" className="text-gray-600 hover:text-gray-900">
                   Pricing
                 </Link>
-                <Link
-                    href="https://github.com/Razikus/supabase-nextjs-template"
-                    className="text-gray-600 hover:text-gray-900"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                  Documentation
+                <Link href="/app" className="text-gray-600 hover:text-gray-900">
+                  GoTo Dashboard
                 </Link>
-
-                <Link
-                    href="https://github.com/Razikus/supabase-nextjs-template"
-                    className="bg-primary-800 text-white px-4 py-2 rounded-lg hover:bg-primary-900 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                  Grab This Template
+                <Link href="/app/stable-diffusion" className="text-gray-600 hover:text-gray-900">
+                  Use StableDiffusion
                 </Link>
+  
 
                 <AuthAwareButtons variant="nav" />
               </div>
@@ -184,16 +174,6 @@ export default function Home() {
                   <li>
                     <Link href="#pricing" className="text-gray-600 hover:text-gray-900">
                       Pricing
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-sm font-semibold text-gray-900">Resources</h4>
-                <ul className="mt-4 space-y-2">
-                  <li>
-                    <Link href="https://github.com/Razikus/supabase-nextjs-template" className="text-gray-600 hover:text-gray-900">
-                      Documentation
                     </Link>
                   </li>
                 </ul>

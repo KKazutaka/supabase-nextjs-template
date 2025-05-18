@@ -10,6 +10,7 @@ import {
     ChevronDown,
     LogOut,
     Key, Files, LucideListTodo,
+    Image
 } from 'lucide-react';
 import { useGlobal } from "@/lib/context/GlobalContext";
 import { createSPASassClient } from "@/lib/supabase/client";
@@ -49,6 +50,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         { name: 'Example Storage', href: '/app/storage', icon: Files },
         { name: 'Example Table', href: '/app/table', icon: LucideListTodo },
         { name: 'User Settings', href: '/app/user-settings', icon: User },
+        { name: 'Use StableDiffusion', href: '/app/stable-diffusion', icon: Image },
     ];
 
     const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
