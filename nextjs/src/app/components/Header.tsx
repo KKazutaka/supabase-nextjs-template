@@ -1,7 +1,35 @@
 import Link from 'next/link';
 import AuthAwareButtons from '@/components/AuthAwareButtons';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { createSPASassClient } from '@/lib/supabase/client';
 
 export default function Header({ productName }: { productName: string }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const supabase = await createSPASassClient();
+        const { data: { user } } = await supabase.getSupabaseClient().auth.getUser();
+        setIsAuthenticated(!!user);
+      } catch {
+        setIsAuthenticated(false);
+      } finally {
+        setLoading(false);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  const handleLogout = async () => {
+    const supabase = await createSPASassClient();
+    await supabase.logout();
+    router.push('/');
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-sm z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,7 +52,13 @@ export default function Header({ productName }: { productName: string }) {
             <Link href="/app/stable-diffusion" className="text-gray-600 hover:text-gray-900">
               Use StableDiffusion
             </Link>
-            <AuthAwareButtons variant="nav" />
+            {!loading && (
+              isAuthenticated ? (
+                <button onClick={handleLogout} className="text-gray-600 hover:text-red-600 border border-gray-300 px-4 py-2 rounded-lg transition-colors">Sign Out</button>
+              ) : (
+                <AuthAwareButtons variant="nav" />
+              )
+            )}
           </div>
         </div>
       </div>
