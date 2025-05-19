@@ -1,4 +1,11 @@
-export default function FeaturesSection({ features }: { features: { icon: any, title: string, description: string, color: string }[] }) {
+type Feature = {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  color: string;
+};
+
+export default function FeaturesSection({ features }: { features: Feature[] }) {
   return (
     <section id="features" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
