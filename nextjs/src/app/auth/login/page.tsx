@@ -121,7 +121,7 @@ export default function LoginPage() {
                 </div>
             </form>
 
-            <SSOButtons onError={setError} />
+            <SSOButtons />
 
             <div className="mt-6 text-center text-sm">
                 <span className="text-gray-600">Don&#39;t have an account?</span>
