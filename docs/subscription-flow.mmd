@@ -1,0 +1,18 @@
+stateDiagram-v2
+[*] --> free
+
+    free --> trial : トライアル開始
+    free --> incomplete : 有料プラン申込（決済未完了）
+
+    trial --> active : トライアル終了（未キャンセル）
+    trial --> to_be_cancelled : キャンセル操作
+    to_be_cancelled --> free : トライアル終了
+
+    active --> to_be_cancelled : キャンセル操作
+    to_be_cancelled --> free : 有料期間終了
+
+    active --> past_due : 課金失敗
+    past_due --> active : 課金成功
+
+    incomplete --> active : 決済成功
+    incomplete --> free : ユーザー離脱／期限切れ

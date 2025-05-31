@@ -52,7 +52,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { label: 'Active Users', value: '10K+' },
+    { label: 'Active Users', value: '10M+' },
     { label: 'Organizations', value: '2K+' },
     { label: 'Countries', value: '50+' },
     { label: 'Uptime', value: '99.9%' }
