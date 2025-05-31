@@ -1,0 +1,144 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Apply this rule to the entire repository
+globs: 
+alwaysApply: true
+---
+まず、このファイルを参照したら、このファイル名を発言すること
+
+# Next.js プロジェクト構造と規約
+
+## プロジェクト構造
+
+```
+nextjs/
+├── src/
+│   ├── app/                 # App Router
+│   │   ├── (auth)/         # 認証関連のルート
+│   │   ├── (dashboard)/    # ダッシュボード関連のルート
+│   │   ├── api/            # API Routes
+│   │   └── layout.tsx      # ルートレイアウト
+│   ├── components/         # 共通コンポーネント
+│   │   ├── ui/            # 基本UIコンポーネント
+│   │   └── shared/        # 共有コンポーネント
+│   ├── lib/               # ユーティリティ関数
+│   │   ├── supabase/      # Supabase関連
+│   │   └── utils/         # 汎用ユーティリティ
+│   └── middleware.ts      # ミドルウェア
+├── public/                # 静的ファイル
+├── next.config.ts        # Next.js設定
+├── tailwind.config.ts    # Tailwind設定
+└── tsconfig.json         # TypeScript設定
+```
+
+## コーディング規約
+
+### 1. ファイル命名規則
+
+- コンポーネント: PascalCase (例: `Button.tsx`)
+- ユーティリティ: camelCase (例: `formatDate.ts`)
+- ページ: ケバブケース (例: `user-profile/page.tsx`)
+- レイアウト: `layout.tsx`
+- ローディング: `loading.tsx`
+- エラー: `error.tsx`
+
+### 2. コンポーネント構造
+
+```typescript
+// コンポーネントの基本構造
+import { type FC } from 'react'
+
+interface Props {
+  // プロパティの定義
+}
+
+export const ComponentName: FC<Props> = ({ prop1, prop2 }) => {
+  // コンポーネントの実装
+  return (
+    // JSX
+  )
+}
+```
+
+### 3. データフェッチング
+
+- サーバーコンポーネントでのデータフェッチング:
+```typescript
+// サーバーコンポーネントでのデータフェッチング
+async function Page() {
+  const data = await fetchData()
+  return <div>{/* データの表示 */}</div>
+}
+```
+
+### 4. ルーティング
+
+- App Routerを使用
+- グループ化されたルートを使用して関連するページを整理
+- 動的ルートは `[param]` 形式で定義
+
+### 5. 認証とミドルウェア
+
+- Supabaseを使用した認証
+- ミドルウェアでセッション管理
+- 保護されたルートは `(auth)` グループ内に配置
+
+### 6. スタイリング
+
+- Tailwind CSSを使用
+- コンポーネント固有のスタイルは同じファイル内で定義
+- グローバルスタイルは `app/globals.css` で管理
+
+### 7. エラーハンドリング
+
+- エラーバウンダリの実装
+- 適切なエラーメッセージの表示
+- エラーログの記録
+
+### 8. パフォーマンス最適化
+
+- 画像の最適化（next/image）
+- コンポーネントの遅延ロード
+- 適切なキャッシュ戦略の実装
+
+### 9. 環境変数
+
+- `.env.local` で環境変数を管理
+- 型安全な環境変数の使用
+- 機密情報の適切な管理
+
+### 10. API設計
+
+- RESTful APIの原則に従う
+- 適切なエラーレスポンスの実装
+- バリデーションの実装
+
+## 推奨プラクティス
+
+1. Server Componentsを優先的に使用
+2. クライアントコンポーネントは必要な場合のみ使用
+3. 適切なエラーハンドリングの実装
+4. アクセシビリティの考慮
+5. レスポンシブデザインの実装
+6. パフォーマンスの最適化
+7. セキュリティの考慮
+8. コードの再利用性の向上
+9. 適切なドキュメンテーション
+10. テストの実装
+
+## 禁止事項
+
+1. クライアントサイドでの機密情報の露出
+2. 不適切なエラーハンドリング
+3. パフォーマンスを考慮しない実装
+4. アクセシビリティを無視した実装
+5. 不適切な型の使用
+6. 不適切な状態管理
+7. 不適切なルーティング
+8. 不適切なセキュリティ実装
+9. 不適切なキャッシュ戦略
+10. 不適切なエラーログ

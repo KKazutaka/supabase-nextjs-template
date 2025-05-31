@@ -6,11 +6,9 @@ A production-ready SaaS template built with Next.js 15, Supabase, and Tailwind C
 
 Demo is here - https://basicsass.razikus.com
 
-
 ## Deployment video
 
 Video is here - https://www.youtube.com/watch?v=kzbXavLndmE
-
 
 ## SupaNuggets
 
@@ -21,74 +19,82 @@ https://supanuggets.razikus.com - grab your copy for free :) (Pay As You Want mo
 ## 🚀 Features
 
 - **Authentication**
-    - Email/Password authentication
-    - Multi-factor authentication (MFA) support
-    - OAuth/SSO integration ready
-    - Password reset and email verification
+
+  - Email/Password authentication
+  - Multi-factor authentication (MFA) support
+  - OAuth/SSO integration ready
+  - Password reset and email verification
 
 - **User Management**
-    - User profiles and settings
-    - Secure password management
-    - Session handling
+
+  - User profiles and settings
+  - Secure password management
+  - Session handling
 
 - **File Management Demo (2FA ready)**
-    - Secure file upload and storage
-    - File sharing capabilities
-    - Drag-and-drop interface
-    - Progress tracking
+
+  - Secure file upload and storage
+  - File sharing capabilities
+  - Drag-and-drop interface
+  - Progress tracking
 
 - **Task Management Demo (2FA ready)**
-    - CRUD operations example
-    - Real-time updates
-    - Filtering and sorting
-    - Row-level security
+
+  - CRUD operations example
+  - Real-time updates
+  - Filtering and sorting
+  - Row-level security
 
 - **Security**
-    - Row Level Security (RLS) policies
-    - Secure file storage policies
-    - Protected API routes
-    - MFA implementation
+
+  - Row Level Security (RLS) policies
+  - Secure file storage policies
+  - Protected API routes
+  - MFA implementation
 
 - **UI/UX**
-    - Modern, responsive design
-    - Dark mode support
-    - Loading states
-    - Error handling
-    - Toast notifications
-    - Confetti animations
+
+  - Modern, responsive design
+  - Dark mode support
+  - Loading states
+  - Error handling
+  - Toast notifications
+  - Confetti animations
 
 - **Legal & Compliance**
-    - Privacy Policy template
-    - Terms of Service template
-    - Refund Policy template
-    - GDPR-ready cookie consent
+  - Privacy Policy template
+  - Terms of Service template
+  - Refund Policy template
+  - GDPR-ready cookie consent
 
 ## 🛠️ Tech Stack
 
 - **Frontend**
-    - Next.js 15 (App Router)
-    - React 19
-    - Tailwind CSS
-    - shadcn/ui components
-    - Lucide icons
+
+  - Next.js 15 (App Router)
+  - React 19
+  - Tailwind CSS
+  - shadcn/ui components
+  - Lucide icons
 
 - **Backend**
-    - Supabase
-    - PostgreSQL
-    - Row Level Security
-    - Storage Buckets
+
+  - Supabase
+  - PostgreSQL
+  - Row Level Security
+  - Storage Buckets
 
 - **Authentication**
-    - Supabase Auth
-    - MFA support
-    - OAuth providers
+  - Supabase Auth
+  - MFA support
+  - OAuth providers
 
 ## 📦 Getting Started - local dev
 
 1. Fork or clone repository
 2. Prepare Supabase Project URL (Project URL from `Project Settings` -> `API` -> `Project URL`)
 3. Prepare Supabase Anon and Service Key (`Anon Key`, `Service Key` from `Project Settings` -> `API` -> `anon public` and `service_role`)
-4. Prepare Supabase Database Password  (You can reset it inside `Project Settings` -> `Database` -> `Database Password`)
+4. Prepare Supabase Database Password (You can reset it inside `Project Settings` -> `Database` -> `Database Password`)
 5. If you already know your app url -> adjust supabase/config.toml `site_url` and `additional_redirect_urls`, you can do it later
 6. Run following commands (inside root of forked / downloaded repository):
 
@@ -109,12 +115,14 @@ npx supabase migrations up --linked
 7. Go to next/js folder and run `yarn`
 8. Copy .env.template to .env.local
 9. Adjust .env.local
+
 ```
 NEXT_PUBLIC_SUPABASE_URL=https://APIURL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=ANONKEY
 PRIVATE_SUPABASE_SERVICE_KEY=SERVICEROLEKEY
 
 ```
+
 10. Run yarn dev
 11. Go to http://localhost:3000 🎉
 
@@ -138,6 +146,7 @@ The template includes customizable legal documents - these are in markdown, so y
 ## 🎨 Theming
 
 The template includes several pre-built themes:
+
 - `theme-sass` (Default)
 - `theme-blue`
 - `theme-purple`
@@ -148,7 +157,6 @@ Change the theme by updating the `NEXT_PUBLIC_THEME` environment variable.
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
 
 ## Need Multitenancy, Billing (Paddle) and Role Based Access Control?
 
@@ -180,10 +188,17 @@ My socials:
 - [GitHub](https://github.com/Razikus)
 - [Website](https://www.razikus.com)
 
-
 ## 🙏 Acknowledgments
 
 - [Next.js](https://nextjs.org/)
 - [Supabase](https://supabase.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
+
+## Using Service
+
+- Supabase : github
+- Vercel : github
+- Stripe : TKG google
+
+## URL
